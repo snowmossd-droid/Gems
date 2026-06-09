@@ -1,0 +1,21 @@
+settings:
+  mana-regen-interval: 40
+  mana-regen-amount: 5
+  max-mana: 100
+  action-bar-update-interval: 10
+  combo-window-seconds: 3
+
+resourcepack:
+  enabled: true
+  required: false
+  kick-on-decline: false
+  notify-success: true
+  send-delay-ticks: 20
+  url: "https://download.mc-packs.net/pack/b69b4e5be46acee9b56179a5a2df711ed8bb394c.zip"
+  sha1: "b69b4e5be46acee9b56179a5a2df711ed8bb394c"
+  prompt: "§6Gems Plugin §fcần resource pack để hiển thị đúng hình dạng gem 3D!"
+  messages:
+    success: "§aResource pack Gems đã được tải thành công!"
+    declined: "§cBạn từ chối resource pack — gems sẽ không hiển thị đúng!"
+    kick-message: "§cBạn phải chấp nhận Resource Pack Gems để vào server!"
+    failed: "§cTải resource pack thất bại nhiều lần. Liên hệ admin!"
