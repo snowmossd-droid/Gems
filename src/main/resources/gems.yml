@@ -210,7 +210,7 @@ gems:
     mana-cost: 14
     sound: ENTITY_SPIDER_AMBIENT
     sound-pitch: 0.7
-    particle: SLIME
+    particle: ITEM_SLIME
     particle-count: 60
     aoe-radius: 5.0
     poison-amplifier: 2
@@ -319,7 +319,7 @@ gems:
     mana-cost: 20
     sound: ENTITY_ENDERMAN_STARE
     sound-pitch: 0.6
-    particle: SMOKE
+    particle: SMOKE_NORMAL
     particle-count: 70
     aoe-radius: 5.0
     invis-duration: 40
@@ -330,3 +330,4 @@ gems:
       - BACKSTAB
       - SHADOW_STEP
       - BLIND_STRIKE
+      
