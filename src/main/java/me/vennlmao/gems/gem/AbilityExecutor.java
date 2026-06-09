@@ -144,7 +144,7 @@ public class AbilityExecutor {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, s.iceArmorDuration(), s.resistanceAmplifier())));
 
             case "POISON_CLOUD" -> {
-                world.spawnParticle(Particle.SLIME, loc, 100, 3, 1, 3, 0.05);
+                world.spawnParticle(Particle.ITEM_SLIME, loc, 100, 3, 1, 3, 0.05);
                 nearby.forEach(e -> {
                     e.addPotionEffect(new PotionEffect(PotionEffectType.POISON, s.poisonDuration(), s.poisonAmplifier()));
                     e.damage(def.damage(), player);
@@ -223,7 +223,7 @@ public class AbilityExecutor {
                 Entity closest = findClosest(nearby, loc);
                 if (closest instanceof LivingEntity le) {
                     le.damage(def.damage() * 1.5, player);
-                    world.spawnParticle(Particle.SMOKE, closest.getLocation(), 30, 0.3, 0.5, 0.3);
+                    world.spawnParticle(Particle.SMOKE_NORMAL, closest.getLocation(), 30, 0.3, 0.5, 0.3);
                 }
             }
 
@@ -266,4 +266,5 @@ public class AbilityExecutor {
                 b.getLocation().distanceSquared(from)))
             .orElse(null);
     }
-}
+        }
+                    
