@@ -55,7 +55,7 @@ public class AbilityExecutor {
             }, 1, 2);
 
             case "AOE_SLOW" -> nearby.forEach(e -> {
-                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, s.slowDuration(), s.slowAmplifier()));
+                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, s.slowDuration(), s.slowAmplifier()));
                 e.damage(def.damage(), player);
             });
 
@@ -65,7 +65,7 @@ public class AbilityExecutor {
             }
 
             case "WATER_SHIELD" -> plugin.scheduler().runForEntity(player, () ->
-                player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, s.resistanceDuration(), 0)));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, s.resistanceDuration(), 0)));
 
             case "LIGHTNING_STRIKE" -> {
                 Entity closest = findClosest(nearby, loc);
@@ -73,7 +73,7 @@ public class AbilityExecutor {
             }
 
             case "AOE_STUN" -> nearby.forEach(e -> {
-                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, s.stunDuration(), 10));
+                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, s.stunDuration(), 10));
                 e.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, s.stunDuration(), 3));
                 e.damage(def.damage(), player);
             });
@@ -88,8 +88,8 @@ public class AbilityExecutor {
             }
 
             case "STONE_ARMOR" -> plugin.scheduler().runForEntity(player, () -> {
-                player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, s.resistanceDuration(), s.resistanceAmplifier()));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 40, 0));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, s.resistanceDuration(), s.resistanceAmplifier()));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 40, 0));
             });
 
             case "SPIKE_WALL", "AOE_KNOCKBACK" -> nearby.forEach(e -> {
@@ -112,7 +112,7 @@ public class AbilityExecutor {
 
             case "SPEED_BOOST" -> plugin.scheduler().runForEntity(player, () -> {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, s.speedDuration(), s.speedAmplifier()));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, s.jumpDuration(), s.jumpAmplifier()));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, s.jumpDuration(), s.jumpAmplifier()));
                 Vector dir = loc.getDirection().multiply(s.launchMultiplier()).setY(0.9);
                 player.setVelocity(dir);
             });
@@ -135,16 +135,16 @@ public class AbilityExecutor {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, s.invisDuration(), 0)));
 
             case "BLIZZARD" -> nearby.forEach(e -> {
-                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, s.freezeDuration(), 5));
+                e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, s.freezeDuration(), 5));
                 e.damage(def.damage(), player);
                 world.spawnParticle(Particle.SNOWFLAKE, e.getLocation(), 20, 0.5, 0.5, 0.5, 0.1);
             });
 
             case "ICE_ARMOR", "FREEZE_AOE" -> plugin.scheduler().runForEntity(player, () ->
-                player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, s.iceArmorDuration(), s.resistanceAmplifier())));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, s.iceArmorDuration(), s.resistanceAmplifier())));
 
             case "POISON_CLOUD" -> {
-                world.spawnParticle(Particle.ITEM_SLIME, loc, 100, 3, 1, 3, 0.05);
+                world.spawnParticle(Particle.ITEM, loc, 100, 3, 1, 3, 0.05, new org.bukkit.inventory.ItemStack(Material.SLIME_BALL));
                 nearby.forEach(e -> {
                     e.addPotionEffect(new PotionEffect(PotionEffectType.POISON, s.poisonDuration(), s.poisonAmplifier()));
                     e.damage(def.damage(), player);
@@ -169,7 +169,7 @@ public class AbilityExecutor {
             });
 
             case "BLOOD_RAGE" -> plugin.scheduler().runForEntity(player, () ->
-                player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, s.strengthDuration(), s.strengthAmplifier())));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, s.strengthDuration(), s.strengthAmplifier())));
 
             case "HEMORRHAGE" -> nearby.forEach(e -> {
                 e.damage(def.damage(), player);
@@ -191,7 +191,7 @@ public class AbilityExecutor {
             case "SPIRIT_BOMB" -> {
                 nearby.forEach(e -> {
                     e.damage(def.damage(), player);
-                    e.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 60, 3));
+                    e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 60, 3));
                 });
                 world.spawnParticle(Particle.SOUL, loc, 150, 3, 3, 3, 0.2);
                 world.createExplosion(loc, 0, false, false, player);
@@ -223,7 +223,7 @@ public class AbilityExecutor {
                 Entity closest = findClosest(nearby, loc);
                 if (closest instanceof LivingEntity le) {
                     le.damage(def.damage() * 1.5, player);
-                    world.spawnParticle(Particle.SMOKE_NORMAL, closest.getLocation(), 30, 0.3, 0.5, 0.3);
+                    world.spawnParticle(Particle.SMOKE, closest.getLocation(), 30, 0.3, 0.5, 0.3);
                 }
             }
 
@@ -241,7 +241,7 @@ public class AbilityExecutor {
 
     private void spawnParticles(World world, Location loc, GemDefinition def) {
         try {
-            if (def.particle() == Particle.BLOCK || def.particle() == Particle.FALLING_DUST) {
+            if (def.particle() == Particle.BLOCK_CRACK || def.particle() == Particle.FALLING_DUST) {
                 world.spawnParticle(def.particle(), loc, def.particleCount(),
                     1.5, 1, 1.5, 0.05, Material.STONE.createBlockData());
             } else {
@@ -267,4 +267,5 @@ public class AbilityExecutor {
             .orElse(null);
     }
         }
-                    
+
+        
