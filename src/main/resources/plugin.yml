@@ -1,0 +1,25 @@
+name: Gems
+version: ${project.version}
+main: me.vennlmao.gems.GemsPlugin
+api-version: 1.20
+folia-supported: true
+author: vennlmao
+description: Elemental Gems — 12 loại đá quý nguyên tố với skill độc đáo
+
+commands:
+  gem:
+    description: Quản lý gems
+    usage: /gem <give|reload|list|resendpack|packinfo> [args...]
+    permission: gems.admin
+  gems:
+    description: Xem gems trong tay
+    usage: /gems
+    permission: gems.use
+
+permissions:
+  gems.admin:
+    description: Quản trị gems
+    default: op
+  gems.use:
+    description: Sử dụng gems
+    default: true

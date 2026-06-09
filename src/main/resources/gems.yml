@@ -1,0 +1,332 @@
+settings:
+  mana-regen-interval: 40
+  mana-regen-amount: 5
+  max-mana: 100
+  action-bar-update-interval: 10
+  combo-window-seconds: 3
+
+gems:
+  fire:
+    display-name: "&cRuby Lửa"
+    lore:
+      - "&7Nguyên tố: &cLửa"
+      - "&7Bắn cầu lửa, thiêu đốt mọi thứ xung quanh"
+      - ""
+      - "&eSát thương: &f75"
+      - "&eHồi chiêu: &f5s"
+      - "&eNăng lượng: &f18"
+    material: DIAMOND
+    custom-model-data: 1001
+    damage: 75
+    cooldown: 5
+    mana-cost: 18
+    sound: ENTITY_BLAZE_SHOOT
+    sound-pitch: 0.8
+    particle: FLAME
+    particle-count: 60
+    aoe-radius: 5.0
+    burn-ticks: 80
+    abilities:
+      - FIREBALL
+      - AOE_BURN
+      - FIRE_TRAIL
+
+  water:
+    display-name: "&bSapphire Nước"
+    lore:
+      - "&7Nguyên tố: &bNước"
+      - "&7Băng giá kẻ địch, hồi phục bản thân"
+      - ""
+      - "&eSát thương: &f35"
+      - "&eHồi chiêu: &f4s"
+      - "&eNăng lượng: &f12"
+    material: DIAMOND
+    custom-model-data: 1002
+    damage: 35
+    cooldown: 4
+    mana-cost: 12
+    sound: ENTITY_PLAYER_SPLASH
+    sound-pitch: 0.6
+    particle: DRIPPING_WATER
+    particle-count: 70
+    aoe-radius: 6.0
+    heal-amount: 8.0
+    slow-amplifier: 4
+    slow-duration: 80
+    abilities:
+      - AOE_SLOW
+      - SELF_HEAL
+      - WATER_SHIELD
+
+  thunder:
+    display-name: "&eTopaz Sấm"
+    lore:
+      - "&7Nguyên tố: &eSấm sét"
+      - "&7Sét đánh, stun và triệt tiêu kỹ năng"
+      - ""
+      - "&eSát thương: &f90"
+      - "&eHồi chiêu: &f3s"
+      - "&eNăng lượng: &f22"
+    material: DIAMOND
+    custom-model-data: 1003
+    damage: 90
+    cooldown: 3
+    mana-cost: 22
+    sound: ENTITY_LIGHTNING_BOLT_THUNDER
+    sound-pitch: 1.0
+    particle: ELECTRIC_SPARK
+    particle-count: 90
+    aoe-radius: 5.0
+    stun-duration: 60
+    abilities:
+      - LIGHTNING_STRIKE
+      - AOE_STUN
+      - CHAIN_LIGHTNING
+
+  earth:
+    display-name: "&aEmerald Đất"
+    lore:
+      - "&7Nguyên tố: &aĐất"
+      - "&7Giáp đá, đẩy lùi kẻ địch và phòng thủ"
+      - ""
+      - "&eSát thương: &f25"
+      - "&eHồi chiêu: &f8s"
+      - "&eNăng lượng: &f10"
+    material: DIAMOND
+    custom-model-data: 1004
+    damage: 25
+    cooldown: 8
+    mana-cost: 10
+    sound: BLOCK_STONE_BREAK
+    sound-pitch: 0.5
+    particle: BLOCK
+    particle-count: 80
+    aoe-radius: 4.0
+    resistance-amplifier: 2
+    resistance-duration: 100
+    knockback-strength: 2.5
+    abilities:
+      - STONE_ARMOR
+      - SPIKE_WALL
+      - AOE_KNOCKBACK
+
+  wind:
+    display-name: "&3Aquamarine Gió"
+    lore:
+      - "&7Nguyên tố: &3Gió"
+      - "&7Lốc xoáy cuốn tất cả, tốc độ siêu nhân"
+      - ""
+      - "&eSát thương: &f55"
+      - "&eHồi chiêu: &f3s"
+      - "&eNăng lượng: &f16"
+    material: DIAMOND
+    custom-model-data: 1005
+    damage: 55
+    cooldown: 3
+    mana-cost: 16
+    sound: ENTITY_PHANTOM_FLAP
+    sound-pitch: 1.5
+    particle: CLOUD
+    particle-count: 60
+    aoe-radius: 7.0
+    speed-amplifier: 3
+    speed-duration: 120
+    jump-amplifier: 3
+    jump-duration: 120
+    launch-multiplier: 1.8
+    abilities:
+      - TORNADO
+      - SPEED_BOOST
+      - AOE_LAUNCH
+
+  dark:
+    display-name: "&5Obsidian Tối"
+    lore:
+      - "&7Nguyên tố: &5Bóng tối"
+      - "&7Hố đen, wither, vô hình — hủy diệt hoàn toàn"
+      - ""
+      - "&eSát thương: &f130"
+      - "&eHồi chiêu: &f12s"
+      - "&eNăng lượng: &f30"
+    material: DIAMOND
+    custom-model-data: 1006
+    damage: 130
+    cooldown: 12
+    mana-cost: 30
+    sound: ENTITY_ENDERMAN_TELEPORT
+    sound-pitch: 0.5
+    particle: SQUID_INK
+    particle-count: 100
+    aoe-radius: 8.0
+    wither-amplifier: 2
+    wither-duration: 100
+    blind-duration: 80
+    invis-duration: 60
+    abilities:
+      - WITHER_AURA
+      - DARK_HOLE
+      - SHADOW_CLONE
+
+  ice:
+    display-name: "&fAqua Ice"
+    lore:
+      - "&7Nguyên tố: &fBăng"
+      - "&7Đóng băng kẻ địch, tạo lớp giáp băng"
+      - ""
+      - "&eSát thương: &f60"
+      - "&eHồi chiêu: &f6s"
+      - "&eNăng lượng: &f20"
+    material: DIAMOND
+    custom-model-data: 1007
+    damage: 60
+    cooldown: 6
+    mana-cost: 20
+    sound: BLOCK_GLASS_BREAK
+    sound-pitch: 1.2
+    particle: SNOWFLAKE
+    particle-count: 80
+    aoe-radius: 5.5
+    freeze-duration: 60
+    ice-armor-duration: 100
+    resistance-amplifier: 1
+    abilities:
+      - BLIZZARD
+      - ICE_ARMOR
+      - FREEZE_AOE
+
+  poison:
+    display-name: "&2Venom Độc"
+    lore:
+      - "&7Nguyên tố: &2Độc"
+      - "&7Đầu độc liên tục, làm suy yếu đối thủ"
+      - ""
+      - "&eSát thương: &f45"
+      - "&eHồi chiêu: &f5s"
+      - "&eNăng lượng: &f14"
+    material: DIAMOND
+    custom-model-data: 1008
+    damage: 45
+    cooldown: 5
+    mana-cost: 14
+    sound: ENTITY_SPIDER_AMBIENT
+    sound-pitch: 0.7
+    particle: SLIME
+    particle-count: 60
+    aoe-radius: 5.0
+    poison-amplifier: 2
+    poison-duration: 120
+    weakness-amplifier: 1
+    weakness-duration: 100
+    abilities:
+      - POISON_CLOUD
+      - VENOM_SPIT
+      - WEAKNESS_AURA
+
+  blood:
+    display-name: "&dCrimson Máu"
+    lore:
+      - "&7Nguyên tố: &dMáu"
+      - "&7Hút máu kẻ địch, tăng sức mạnh theo HP"
+      - ""
+      - "&eSát thương: &f85"
+      - "&eHồi chiêu: &f7s"
+      - "&eNăng lượng: &f24"
+    material: DIAMOND
+    custom-model-data: 1009
+    damage: 85
+    cooldown: 7
+    mana-cost: 24
+    sound: ENTITY_PLAYER_HURT
+    sound-pitch: 0.6
+    particle: FALLING_DUST
+    particle-count: 70
+    aoe-radius: 5.0
+    lifesteal-percent: 0.35
+    strength-amplifier: 2
+    strength-duration: 80
+    abilities:
+      - LIFESTEAL
+      - BLOOD_RAGE
+      - HEMORRHAGE
+
+  soul:
+    display-name: "&9Amethyst Linh Hồn"
+    lore:
+      - "&7Nguyên tố: &9Linh hồn"
+      - "&7Hút linh hồn, teleport và tàng hình"
+      - ""
+      - "&eSát thương: &f110"
+      - "&eHồi chiêu: &f10s"
+      - "&eNăng lượng: &f28"
+    material: DIAMOND
+    custom-model-data: 1010
+    damage: 110
+    cooldown: 10
+    mana-cost: 28
+    sound: ENTITY_WITHER_AMBIENT
+    sound-pitch: 0.4
+    particle: SOUL
+    particle-count: 80
+    aoe-radius: 7.0
+    invis-duration: 80
+    wither-amplifier: 1
+    wither-duration: 80
+    teleport-range: 8.0
+    abilities:
+      - SOUL_DRAIN
+      - PHASE_SHIFT
+      - SPIRIT_BOMB
+
+  magma:
+    display-name: "&6Magma Nham Thạch"
+    lore:
+      - "&7Nguyên tố: &6Dung nham"
+      - "&7Nổ tung dung nham, thiêu hủy cả khu vực"
+      - ""
+      - "&eSát thương: &f100"
+      - "&eHồi chiêu: &f8s"
+      - "&eNăng lượng: &f26"
+    material: DIAMOND
+    custom-model-data: 1011
+    damage: 100
+    cooldown: 8
+    mana-cost: 26
+    sound: BLOCK_LAVA_POP
+    sound-pitch: 0.9
+    particle: LAVA
+    particle-count: 80
+    aoe-radius: 6.0
+    burn-ticks: 100
+    explosion-power: 2.5
+    abilities:
+      - MAGMA_BURST
+      - LAVA_POOL
+      - ERUPTION
+
+  shadow:
+    display-name: "&8Shadow Bóng Đêm"
+    lore:
+      - "&7Nguyên tố: &8Bóng đêm"
+      - "&7Ám sát từ bóng tối, xuyên giáp hoàn toàn"
+      - ""
+      - "&eSát thương: &f70"
+      - "&eHồi chiêu: &f6s"
+      - "&eNăng lượng: &f20"
+    material: DIAMOND
+    custom-model-data: 1012
+    damage: 70
+    cooldown: 6
+    mana-cost: 20
+    sound: ENTITY_ENDERMAN_STARE
+    sound-pitch: 0.6
+    particle: SMOKE
+    particle-count: 70
+    aoe-radius: 5.0
+    invis-duration: 40
+    blind-duration: 60
+    speed-amplifier: 2
+    speed-duration: 60
+    abilities:
+      - BACKSTAB
+      - SHADOW_STEP
+      - BLIND_STRIKE
