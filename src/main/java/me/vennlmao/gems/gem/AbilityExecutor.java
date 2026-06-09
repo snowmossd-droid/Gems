@@ -241,14 +241,14 @@ public class AbilityExecutor {
 
     private void spawnParticles(World world, Location loc, GemDefinition def) {
         try {
-            if (def.particle() == Particle.BLOCK_DUST || def.particle() == Particle.FALLING_DUST) {
-                world.spawnParticle(def.particle(), loc, def.particleCount(),
-                    1.5, 1, 1.5, 0.05, Material.STONE.createBlockData());
-            } else {
-                world.spawnParticle(def.particle(), loc, def.particleCount(), 1.5, 1, 1.5, 0.05);
-            }
+            world.spawnParticle(def.particle(), loc, def.particleCount(),
+                1.5, 1, 1.5, 0.05, Material.STONE.createBlockData());
         } catch (Exception ignored) {
-            world.spawnParticle(Particle.CLOUD, loc, def.particleCount(), 1.5, 1, 1.5, 0.05);
+            try {
+                world.spawnParticle(def.particle(), loc, def.particleCount(), 1.5, 1, 1.5, 0.05);
+            } catch (Exception ignored2) {
+                world.spawnParticle(Particle.CLOUD, loc, def.particleCount(), 1.5, 1, 1.5, 0.05);
+            }
         }
     }
 
@@ -266,7 +266,4 @@ public class AbilityExecutor {
                 b.getLocation().distanceSquared(from)))
             .orElse(null);
     }
-        }
-
-
-                             
+                    }
