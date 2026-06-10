@@ -1,0 +1,299 @@
+settings:
+  mana-regen-interval: 40
+  mana-regen-amount: 5
+  max-mana: 100
+  action-bar-update-interval: 10
+  combo-window-seconds: 3
+
+gems:
+  air:
+    display-name: "&7Air Gem"
+    lore:
+      - "&7Nguyên tố: &7Gió"
+      - "&7Lốc xoáy cuốn bay kẻ địch, tăng tốc độ"
+      - ""
+      - "&eSát thương: &f55"
+      - "&eHồi chiêu: &f3s"
+      - "&eNăng lượng: &f16"
+    material: DIAMOND
+    custom-model-data: 1001
+    damage: 55
+    cooldown: 3
+    mana-cost: 16
+    sound: ENTITY_PHANTOM_FLAP
+    sound-pitch: 1.5
+    particle: CLOUD
+    particle-count: 60
+    aoe-radius: 7.0
+    speed-amplifier: 3
+    speed-duration: 120
+    jump-amplifier: 3
+    jump-duration: 120
+    launch-multiplier: 1.8
+    abilities:
+      - TORNADO
+      - SPEED_BOOST
+      - AOE_LAUNCH
+
+  fire:
+    display-name: "&cFire Gem"
+    lore:
+      - "&7Nguyên tố: &cLửa"
+      - "&7Bắn cầu lửa, thiêu đốt mọi thứ xung quanh"
+      - ""
+      - "&eSát thương: &f75"
+      - "&eHồi chiêu: &f5s"
+      - "&eNăng lượng: &f18"
+    material: DIAMOND
+    custom-model-data: 1002
+    damage: 75
+    cooldown: 5
+    mana-cost: 18
+    sound: ENTITY_BLAZE_SHOOT
+    sound-pitch: 0.8
+    particle: FLAME
+    particle-count: 60
+    aoe-radius: 5.0
+    burn-ticks: 80
+    abilities:
+      - FIREBALL
+      - AOE_BURN
+      - FIRE_TRAIL
+
+  heal:
+    display-name: "&dHeal Gem"
+    lore:
+      - "&7Nguyên tố: &dHồi phục"
+      - "&7Hồi máu bản thân và đồng minh xung quanh"
+      - ""
+      - "&eSát thương: &f20"
+      - "&eHồi chiêu: &f8s"
+      - "&eNăng lượng: &f20"
+    material: DIAMOND
+    custom-model-data: 1003
+    damage: 20
+    cooldown: 8
+    mana-cost: 20
+    sound: ENTITY_PLAYER_LEVELUP
+    sound-pitch: 1.2
+    particle: HEART
+    particle-count: 50
+    aoe-radius: 6.0
+    heal-amount: 15.0
+    abilities:
+      - SELF_HEAL
+      - AOE_HEAL
+      - REGEN_AURA
+
+  ice:
+    display-name: "&bIce Gem"
+    lore:
+      - "&7Nguyên tố: &bBăng"
+      - "&7Đóng băng kẻ địch, tạo lớp giáp băng"
+      - ""
+      - "&eSát thương: &f60"
+      - "&eHồi chiêu: &f6s"
+      - "&eNăng lượng: &f20"
+    material: DIAMOND
+    custom-model-data: 1004
+    damage: 60
+    cooldown: 6
+    mana-cost: 20
+    sound: BLOCK_GLASS_BREAK
+    sound-pitch: 1.2
+    particle: SNOWFLAKE
+    particle-count: 80
+    aoe-radius: 5.5
+    freeze-duration: 60
+    ice-armor-duration: 100
+    resistance-amplifier: 1
+    abilities:
+      - BLIZZARD
+      - ICE_ARMOR
+      - FREEZE_AOE
+
+  iron:
+    display-name: "&8Iron Gem"
+    lore:
+      - "&7Nguyên tố: &8Sắt"
+      - "&7Giáp sắt dày, phản đòn và phòng thủ tối thượng"
+      - ""
+      - "&eSát thương: &f40"
+      - "&eHồi chiêu: &f7s"
+      - "&eNăng lượng: &f15"
+    material: DIAMOND
+    custom-model-data: 1005
+    damage: 40
+    cooldown: 7
+    mana-cost: 15
+    sound: BLOCK_ANVIL_LAND
+    sound-pitch: 0.8
+    particle: CRIT
+    particle-count: 60
+    aoe-radius: 4.0
+    resistance-amplifier: 3
+    resistance-duration: 120
+    knockback-strength: 2.0
+    abilities:
+      - STONE_ARMOR
+      - AOE_KNOCKBACK
+      - SPIKE_WALL
+
+  lava:
+    display-name: "&6Lava Gem"
+    lore:
+      - "&7Nguyên tố: &6Dung nham"
+      - "&7Nổ tung dung nham, thiêu hủy cả khu vực"
+      - ""
+      - "&eSát thương: &f100"
+      - "&eHồi chiêu: &f8s"
+      - "&eNăng lượng: &f26"
+    material: DIAMOND
+    custom-model-data: 1006
+    damage: 100
+    cooldown: 8
+    mana-cost: 26
+    sound: BLOCK_LAVA_POP
+    sound-pitch: 0.9
+    particle: LAVA
+    particle-count: 80
+    aoe-radius: 6.0
+    burn-ticks: 100
+    explosion-power: 2.5
+    abilities:
+      - MAGMA_BURST
+      - LAVA_POOL
+      - ERUPTION
+
+  light:
+    display-name: "&eLightning Gem"
+    lore:
+      - "&7Nguyên tố: &eSấm sét"
+      - "&7Sét đánh, stun và triệt tiêu kỹ năng"
+      - ""
+      - "&eSát thương: &f90"
+      - "&eHồi chiêu: &f3s"
+      - "&eNăng lượng: &f22"
+    material: DIAMOND
+    custom-model-data: 1007
+    damage: 90
+    cooldown: 3
+    mana-cost: 22
+    sound: ENTITY_LIGHTNING_BOLT_THUNDER
+    sound-pitch: 1.0
+    particle: ELECTRIC_SPARK
+    particle-count: 90
+    aoe-radius: 5.0
+    stun-duration: 60
+    abilities:
+      - LIGHTNING_STRIKE
+      - AOE_STUN
+      - CHAIN_LIGHTNING
+
+  random:
+    display-name: "&aRandom Gem"
+    lore:
+      - "&7Nguyên tố: &aNgẫu nhiên"
+      - "&7Kích hoạt skill ngẫu nhiên mỗi lần dùng"
+      - ""
+      - "&eSát thương: &f50"
+      - "&eHồi chiêu: &f4s"
+      - "&eNăng lượng: &f12"
+    material: DIAMOND
+    custom-model-data: 1008
+    damage: 50
+    cooldown: 4
+    mana-cost: 12
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    sound-pitch: 1.0
+    particle: TOTEM_OF_UNDYING
+    particle-count: 60
+    aoe-radius: 5.0
+    abilities:
+      - FIREBALL
+      - LIGHTNING_STRIKE
+      - TORNADO
+      - BLIZZARD
+      - POISON_CLOUD
+      - LIFESTEAL
+
+  sand:
+    display-name: "&eSand Gem"
+    lore:
+      - "&7Nguyên tố: &eCát"
+      - "&7Bão cát mù mắt kẻ địch, làm chậm di chuyển"
+      - ""
+      - "&eSát thương: &f45"
+      - "&eHồi chiêu: &f5s"
+      - "&eNăng lượng: &f14"
+    material: DIAMOND
+    custom-model-data: 1009
+    damage: 45
+    cooldown: 5
+    mana-cost: 14
+    sound: BLOCK_SAND_BREAK
+    sound-pitch: 0.9
+    particle: FALLING_DUST
+    particle-count: 80
+    aoe-radius: 6.0
+    blind-duration: 60
+    slow-amplifier: 2
+    slow-duration: 80
+    abilities:
+      - SAND_STORM
+      - AOE_SLOW
+      - BLIND_STRIKE
+
+  strenght:
+    display-name: "&cStrength Gem"
+    lore:
+      - "&7Nguyên tố: &cSức mạnh"
+      - "&7Tăng sức tấn công, đập nát mọi thứ"
+      - ""
+      - "&eSát thương: &f85"
+      - "&eHồi chiêu: &f7s"
+      - "&eNăng lượng: &f24"
+    material: DIAMOND
+    custom-model-data: 1010
+    damage: 85
+    cooldown: 7
+    mana-cost: 24
+    sound: ENTITY_PLAYER_ATTACK_STRONG
+    sound-pitch: 0.8
+    particle: CRIT_MAGIC
+    particle-count: 70
+    aoe-radius: 5.0
+    strength-amplifier: 3
+    strength-duration: 100
+    knockback-strength: 3.0
+    abilities:
+      - BLOOD_RAGE
+      - AOE_KNOCKBACK
+      - HEMORRHAGE
+
+  water:
+    display-name: "&bWater Gem"
+    lore:
+      - "&7Nguyên tố: &bNước"
+      - "&7Băng giá kẻ địch, hồi phục bản thân"
+      - ""
+      - "&eSát thương: &f35"
+      - "&eHồi chiêu: &f4s"
+      - "&eNăng lượng: &f12"
+    material: DIAMOND
+    custom-model-data: 1011
+    damage: 35
+    cooldown: 4
+    mana-cost: 12
+    sound: ENTITY_PLAYER_SPLASH
+    sound-pitch: 0.6
+    particle: DRIPPING_WATER
+    particle-count: 70
+    aoe-radius: 6.0
+    heal-amount: 8.0
+    slow-amplifier: 4
+    slow-duration: 80
+    abilities:
+      - AOE_SLOW
+      - SELF_HEAL
+      - WATER_SHIELD
